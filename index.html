@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ventas y Egresos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Ventas y Egresos</h1>
+
+        <section id="ventas">
+            <h2>Registrar Venta</h2>
+            <form id="venta-form">
+                <div>
+                    <label for="venta-descripcion">Descripción (opcional):</label>
+                    <input type="text" id="venta-descripcion">
+                </div>
+                <div>
+                    <label for="venta-monto">Monto (*):</label>
+                    <input type="number" id="venta-monto" required>
+                </div>
+                <div>
+                    <label for="venta-metodo">Método de Pago (*):</label>
+                    <select id="venta-metodo" required>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="tarjeta">Tarjeta</option>
+                    </select>
+                </div>
+                <button type="button" onclick="agregarVenta()">Guardar Venta</button>
+            </form>
+
+            <h3>Ventas Registradas</h3>
+            <div id="tabla-ventas-container">
+                <table id="tabla-ventas">
+                    </table>
+            </div>
+        </section>
+
+        <section id="egresos">
+            <h2>Registrar Egreso</h2>
+            <form id="egreso-form">
+                <div>
+                    <label for="egreso-descripcion">Descripción (*):</label>
+                    <input type="text" id="egreso-descripcion" required>
+                </div>
+                <div>
+                    <label for="egreso-monto">Monto (*):</label>
+                    <input type="number" id="egreso-monto" required>
+                </div>
+                <button type="button" onclick="agregarEgreso()">Guardar Egreso</button>
+            </form>
+
+            <h3>Egresos Registrados</h3>
+            <div id="tabla-egresos-container">
+                <table id="tabla-egresos">
+                    </table>
+            </div>
+        </section>
+
+        <section id="exportar">
+            <h2>Exportar Datos</h2>
+            <button onclick="exportarVentasCSV()">Exportar Ventas a CSV</button>
+            <button onclick="exportarEgresosCSV()">Exportar Egresos a CSV</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
